@@ -77,3 +77,17 @@ body {
 }
 
 /* ADDED STYLING */
+.edit-button {
+  position: absolute;
+  top: 25px;
+  right: 85px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+  text-decoration: none;
+  color: black;
+}
+.edit-button:hover {
+  background-color: green;
+  color: white;
+}
