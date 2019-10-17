@@ -91,3 +91,18 @@ body {
   background-color: green;
   color: white;
 }
+
+.add-button {
+  position: absolute;
+  top: 25px;
+  right: 131.5px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+  text-decoration: none;
+  color: black;
+}
+.add-button:hover {
+  background-color: green;
+  color: white;
+}

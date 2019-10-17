@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const UpdateForm = props => {
+const AddForm = props => {
   const [movie , setMovie] = useState([])
-  const [updateMovie, setUpdateMovie] = useState({id: props.match.params.id, title: '', director: '', metascore: 0, stars: ''})
+  const [addMovie, setAddMovie] = useState({id: props.match.params.id, title: '', director: '', metascore: 0, stars: ''})
 
   const fetchMovie = () => {
     axios
-      .get(`http://localhost:5000/api/movies/${props.match.params.id}`)
+      .get(`http://localhost:5000/api/movies`)
       .then(response => {
         setMovie(response.data)
       })
   }
 
-  const Update = () => {
-    const stars = updateMovie.stars.split(',');
-    const newMovie = {...updateMovie, stars}
+  const Add = () => {
+    const stars = addMovie.stars.split(',');
+    const newMovie = {...addMovie, stars}
     axios
-      .put(`http://localhost:5000/api/movies/${movie.id}`, newMovie)
+      .post(`http://localhost:5000/api/movies`, newMovie)
       .then(() => {
-        setUpdateMovie({title: '', director: '', metascore: 0, stars: ''})
+        setAddMovie({title: '', director: '', metascore: 0, stars: ''})
         props.history.push("/");
       })
       .catch(error => {
@@ -27,31 +27,22 @@ const UpdateForm = props => {
       })
   }
 
-  const Delete = () => {
-    axios
-      .delete(`http://localhost:5000/api/movies/${movie.id}`, updateMovie)
-      .then(() => {
-        props.history.push("/");
-      })
-      .catch(error => console.log(error))
-  }
-
   useEffect(() => {
     fetchMovie();
   }, [])
 
   const handleChange = e => {
-    setUpdateMovie({...updateMovie, [e.target.name]:e.target.value})
+    setAddMovie({...addMovie, [e.target.name]:e.target.value})
   }
 
   const handleSubmit = e => {
     e.preventDefault();
-    Update(updateMovie)
+    Add(addMovie)
   }
 
   return(
     <div>
-      Hello UpdateForm!
+      Hello AddForm!
       <form onSubmit={handleSubmit}>
         <input 
           name='title'
@@ -77,11 +68,10 @@ const UpdateForm = props => {
           placeholder='First Actor'
           onChange={handleChange}
         />
-        <button>Update</button>
+        <button>Add</button>
       </form>
-      <button onClick={() => Delete()}>Delete</button>
     </div>
   )
 }
 
-export default UpdateForm;
+export default AddForm;
