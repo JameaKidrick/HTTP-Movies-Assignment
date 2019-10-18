@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Button, Form, FormGroup, Label } from 'reactstrap';
 
 const UpdateForm = props => {
   const [movie , setMovie] = useState([])
@@ -50,36 +51,47 @@ const UpdateForm = props => {
   }
 
   return(
-    <div>
-      Hello UpdateForm!
-      <form onSubmit={handleSubmit}>
-        <input 
-          name='title'
-          type='text'
-          placeholder='Title'
-          onChange={handleChange}
-        />
-        <input 
-          name='director'
-          type='text'
-          placeholder='Director'
-          onChange={handleChange}
-        />
-        <input 
-          name='metascore'
-          type='text'
-          placeholder='Metascore'
-          onChange={handleChange}
-        />
-        <input 
-          name='stars'
-          type='text'
-          placeholder='First Actor'
-          onChange={handleChange}
-        />
-        <button>Update</button>
-      </form>
-      <button onClick={() => Delete()}>Delete</button>
+    <div  style={{width:'50%', margin: '0 auto'}}>
+      <h3 style={{textAlign:'center'}}>{`Update: ${movie.title}`}</h3>
+      <Form onSubmit={handleSubmit}>
+        <FormGroup style={{display:'flex', flexDirection:'column', width:'30%', margin:'3% auto'}}>
+          <Label for="exampleEmail">Title</Label>
+          <input 
+            name='title'
+            type='text'
+            onChange={handleChange}
+          />
+        </FormGroup>
+        <FormGroup style={{display:'flex', flexDirection:'column', width:'30%', margin:'3% auto'}}>
+          <Label for="exampleEmail">Director</Label>
+          <input 
+            name='director'
+            type='text'
+            onChange={handleChange}
+          />
+        </FormGroup>
+        <FormGroup style={{display:'flex', flexDirection:'column', width:'30%', margin:'3% auto'}}>
+          <Label for="exampleEmail">Metascore</Label>
+          <input 
+            name='metascore'
+            type='text'
+            onChange={handleChange}
+          />
+        </FormGroup>
+        <FormGroup style={{display:'flex', flexDirection:'column', width:'30%', margin:'3% auto'}}>
+          <Label for="exampleEmail">Actor(s)</Label>
+          <p style={{fontSize:'10px'}}>Please separate actors with a comma</p>
+          <input 
+            name='stars'
+            type='text'
+            onChange={handleChange}
+          />
+        </FormGroup>
+        <div style={{marginLeft: '335px'}}>
+          <Button color="warning" style={{marginRight: '10px'}}>Edit</Button>
+          <Button color="danger" onClick={() => Delete()}>Delete</Button>
+        </div>
+      </Form>
     </div>
   )
 }

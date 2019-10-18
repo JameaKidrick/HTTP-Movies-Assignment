@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
-import { Link } from 'react-router-dom'
+import { Button } from 'reactstrap';
+
 export default class Movie extends React.Component {
   constructor(props) {
     super(props);
@@ -41,9 +42,9 @@ export default class Movie extends React.Component {
       <div className="save-wrapper">
         <MovieCard movie={this.state.movie} />
         <div className="save-button" onClick={this.saveMovie}>
-          Save
+          <Button color="info">Save</Button>
         </div>
-        <button className="edit-button" onClick={() => this.props.history.push(`/update-movie/${this.props.match.params.id }`)}>Edit</button>
+        <div className="edit-button" onClick={() => this.props.history.push(`/update-movie/${this.props.match.params.id }`)}><Button color="warning">Edit</Button></div>
       </div>
     );
   }

@@ -55,21 +55,21 @@ body {
 }
 .save-button {
   position: absolute;
-  top: 25px;
-  right: 25px;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  background-color: lightseagreen;
+  top: 230px;
+  right: 385px;
+  /* border: 1px solid grey; */
+  /* padding: 5px 10px; */
+  /* background-color: lightseagreen; */
 }
-.save-button:hover {
+/* .save-button:hover {
   background-color: green;
   color: white;
-}
+} */
 
-.home-button {
+/* .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
-}
+} */
 
 .movie-warning {
   color: red;
@@ -79,30 +79,30 @@ body {
 /* ADDED STYLING */
 .edit-button {
   position: absolute;
-  top: 25px;
-  right: 85px;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  background-color: lightseagreen;
+  top: 230px;
+  right: 460px;
+  /* border: 1px solid grey; */
+  /* padding: 5px 10px; */
+  /* background-color: lightseagreen; */
   text-decoration: none;
-  color: black;
+  /* color: black; */
 }
-.edit-button:hover {
+/* .edit-button:hover {
   background-color: green;
   color: white;
-}
+} */
 
 .add-button {
   position: absolute;
-  top: 25px;
-  right: 131.5px;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  background-color: lightseagreen;
-  text-decoration: none;
-  color: black;
+  /* top: 25px; */
+  right: 110px;
+  /* border: 1px solid grey; */
+  /* padding: 5px 10px; */
+  /* background-color: lightseagreen; */
+  /* text-decoration: none; */
+  /* color: black; */
 }
-.add-button:hover {
+/* .add-button:hover {
   background-color: green;
   color: white;
-}
+} */
